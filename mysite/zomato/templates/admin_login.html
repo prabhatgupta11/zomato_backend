@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h2>Admin Login:</h2>
+            {% if message %}
+                <p>{{ message }}</p>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <label for="username">Username:</label>
+                <input type="text" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <a href="{% url 'main_page' %}" class="main-page-link">Back to Main Page</a>
+        </div>
+    </div>
+</body>
+</html>

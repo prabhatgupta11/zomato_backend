@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Dish</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Remove Dish</h1>
+            {% if message %}
+                <p>{{ message }}</p>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <label for="dish_id">Dish ID:</label>
+                <input type="text" name="dish_id" required><br>
+                <input type="submit" value="Remove Dish">
+            </form>
+            <a href="{% url 'display_menu' %}">Back to Menu</a>
+            <a href="{% url 'admin_menu' %}">Back to Admin Menu</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Dish</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Add Dish</h1>
+            <form method="post">
+                {% csrf_token %}
+                <label for="dish_id">Dish ID:</label>
+                <input type="text" name="dish_id">
+                <label for="dish_name">Dish Name:</label>
+                <input type="text" name="dish_name">
+                <label for="price">Price:</label>
+                <input type="text" name="price">
+                <label for="available">Available:</label>
+                <input type="checkbox" name="available">
+                <label for="quantity">Quantity:</label>
+                <input type="number" name="quantity">
+                <button type="submit">Add Dish</button>
+            </form>
+            <ul>
+                <li><a href="{% url 'display_menu' %}">Display Menu</a></li>
+                <li><a href="{% url 'admin_menu' %}">Admin Menu</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

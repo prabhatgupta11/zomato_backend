@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Take Order</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+</head>
+<body>
+    <div class="container">
+        <div class="order-form">
+            <h2>Take Order:</h2>
+            {% if message %}
+                <p>{{ message }}</p>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <label for="customer_name">Customer Name:</label>
+                <input type="text" name="customer_name" required>
+                <label for="order_items">Order Items (dish IDs):</label>
+                <input type="text" name="order_items" required>
+                <button type="submit">Place Order</button>
+            </form>
+            <a href="{% url 'user_section' %}" class="user-section-link">Back to User Section</a>
+        </div>
+    </div>
+</body>
+</html>

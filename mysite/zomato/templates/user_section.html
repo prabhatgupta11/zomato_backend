@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Section</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="user-section">
+            <h1>Welcome, User!</h1>
+        
+            <a href="{% url 'display_menu' %}">Display Menu</a>
+            <a href="{% url 'take_order' %}">Take Order</a>
+            <a href="{% url 'update_order_status' %}">Update Order Status</a>
+            <a href="{% url 'user_logout' %}">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

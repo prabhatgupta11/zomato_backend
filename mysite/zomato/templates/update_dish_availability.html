@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Dish Availability</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Update Dish Availability</h1>
+            {% if message %}
+                <p>{{ message }}</p>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <label for="dish_id">Dish ID:</label>
+                <input type="text" name="dish_id" required><br>
+                <label for="available">Available:</label>
+                <input type="radio" name="available" value="yes"> Yes
+                <input type="radio" name="available" value="no"> No<br>
+                <label for="quantity">Quantity:</label>
+                <input type="number" name="quantity" required><br>
+                <input type="submit" value="Update Availability">
+            </form>
+            <a href="{% url 'admin_menu' %}">Back to Admin Menu</a>
+        </div>
+    </div>
+</body>
+</html>
